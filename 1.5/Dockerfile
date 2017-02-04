@@ -4,6 +4,12 @@ ENV RUST_BACKTRACE 1
 
 RUN { set -ex; \
 	# install deps
+	apt-get update; \
+	apt-get install --no-install-recommends -y libssl1.0.0; \
+}
+
+RUN { set -ex; \
+	# install deps
 	BUILD_DEPS="g++ build-essential curl git ca-certificates file libssl-dev"; \
 	apt-get update; \
 	apt-get install --no-install-recommends -y $BUILD_DEPS; \
