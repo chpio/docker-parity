@@ -23,9 +23,9 @@ RUN { set -ex; \
 	g++ -v; \
 
 	# download
-	git clone https://github.com/ethcore/parity /tmp/parity --depth 1 --branch v1.5.4; \
+	git clone https://github.com/ethcore/parity /tmp/parity --depth 1 --branch v1.5.6; \
 	cd /tmp/parity; \
-	git checkout 74b850e7fcd6d6b9423ee315a06fc0520b3bc0c9; \
+	git checkout dc8bc8d8dd5af2abe70624efe4ef3e054e65f5eb; \
 
 	# build & install
 	cargo build --release --verbose; \
