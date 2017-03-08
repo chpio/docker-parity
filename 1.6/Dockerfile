@@ -10,7 +10,7 @@ RUN { set -ex; \
 
 RUN { set -ex; \
 	# install deps
-	BUILD_DEPS="g++ build-essential curl git ca-certificates file libssl-dev pkg-config"; \
+	BUILD_DEPS="g++ build-essential curl git ca-certificates file libssl-dev pkg-config libudev-dev"; \
 	apt-get update; \
 	apt-get install --no-install-recommends -y $BUILD_DEPS; \
 	curl https://static.rust-lang.org/rustup.sh | sh -s -- -y --prefix=/tmp/rust --disable-sudo; \
