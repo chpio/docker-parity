@@ -13,8 +13,8 @@ RUN { set -ex; \
 	BUILD_DEPS="g++ build-essential curl git ca-certificates file libssl-dev pkg-config libudev-dev"; \
 	apt-get update; \
 	apt-get install --no-install-recommends -y $BUILD_DEPS; \
-	curl https://static.rust-lang.org/rustup.sh | sh -s -- -y --prefix=/tmp/rust --disable-sudo; \
-	export PATH=/tmp/rust/bin:${PATH}; \
+	curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain 1.16.0; \
+	export PATH=/root/.cargo/bin:${PATH}; \
 
 	# show tool versions
 	rustc -vV; \
@@ -34,7 +34,7 @@ RUN { set -ex; \
 	# clean up
 	apt-get remove -y $BUILD_DEPS; \
 	apt-get autoremove -y; \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cargo; \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cargo /root/.rustup; \
 }
 
 ENTRYPOINT ["parity"]
