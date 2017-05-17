@@ -23,7 +23,7 @@ RUN { set -ex; \
 	g++ -v; \
 
 	# download
-	git clone https://github.com/ethcore/parity /tmp/parity --depth 1 --branch v1.5.12; \
+	git clone https://github.com/paritytech/parity /tmp/parity --depth 1 --branch v1.5.12; \
 	cd /tmp/parity; \
 	git checkout 0caaa019651aa0746f48978a9caea92b2a95775d; \
 
