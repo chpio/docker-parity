@@ -28,7 +28,7 @@ RUN { set -ex; \
 	git checkout e1284181470059bcf560735bd4f2ffa01d836e55; \
 
 	# build & install
-	cargo build --release --verbose; \
+	cargo build --release --features final --verbose; \
 	mv target/release/parity /usr/bin; \
 
 	# clean up
