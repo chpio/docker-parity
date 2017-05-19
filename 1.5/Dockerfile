@@ -1,7 +1,5 @@
 FROM debian:jessie-slim
 
-ENV RUST_BACKTRACE 1
-
 RUN { set -ex; \
 	# install deps
 	apt-get update; \
@@ -28,6 +26,7 @@ RUN { set -ex; \
 	git checkout 0caaa019651aa0746f48978a9caea92b2a95775d; \
 
 	# build & install
+	export RUST_BACKTRACE=1; \
 	cargo build --release --features final --verbose; \
 	mv target/release/parity /usr/bin; \
 
