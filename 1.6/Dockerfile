@@ -23,9 +23,9 @@ RUN { set -ex; \
 	g++ -v; \
 
 	# download
-	git clone https://github.com/paritytech/parity /tmp/parity --depth 1 --branch v1.6.6; \
+	git clone https://github.com/paritytech/parity /tmp/parity --depth 1 --branch v1.6.7; \
 	cd /tmp/parity; \
-	git checkout 8c6e3f314a60b6ba42dddc8e7485b891bffbfe96; \
+	git checkout e1284181470059bcf560735bd4f2ffa01d836e55; \
 
 	# build & install
 	cargo build --release --verbose; \
