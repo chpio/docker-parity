@@ -11,7 +11,7 @@ RUN { set -ex; \
 	BUILD_DEPS="g++ build-essential curl git ca-certificates file libssl-dev pkg-config libudev-dev"; \
 	apt-get update; \
 	apt-get install --no-install-recommends -y $BUILD_DEPS; \
-	curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain 1.16.0; \
+	curl https://sh.rustup.rs -sSf | sh -s -- -y; \
 	export PATH=/root/.cargo/bin:${PATH}; \
 
 	# show tool versions
