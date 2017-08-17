@@ -1,9 +1,9 @@
-FROM debian:jessie-slim
+FROM debian:stretch-slim
 
 RUN { set -ex; \
 	# install deps
 	apt-get update; \
-	apt-get install --no-install-recommends -y libssl1.0.0; \
+	apt-get install --no-install-recommends -y libssl1.0.2; \
 }
 
 RUN { set -ex; \
