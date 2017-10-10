@@ -21,9 +21,9 @@ RUN { set -ex; \
 	g++ -v; \
 
 	# download
-	git clone https://github.com/paritytech/parity /tmp/parity --depth 1 --branch v1.7.0; \
+	git clone https://github.com/paritytech/parity /tmp/parity --depth 1 --branch v1.7.3; \
 	cd /tmp/parity; \
-	git checkout 5f2cabd6e3fca2f9d66e9129d5f39da7a994df5d; \
+	git checkout d097956ede0b05ffd29d6ccf4a4248bd90cee599; \
 
 	# build & install
 	export RUST_BACKTRACE=1; \
